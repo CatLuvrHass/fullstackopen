@@ -19,7 +19,8 @@ Introduction to React.
 
     - Variables: use let and const.
 
-    - Arrays: use immutable data structures. use functional programming methods such as ``concat``(creates a new array with new items) and not ``push``.
+    - Arrays: use immutable data structures. 
+    use functional programming methods such as ``concat``(creates a new array with new items) and not ``push``.
 
     use of ``map.()`` function is frequently useful in React. snippet: 
     ```const t = [1, 2, 3]
