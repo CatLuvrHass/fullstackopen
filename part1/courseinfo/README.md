@@ -88,3 +88,6 @@
     - Changes in state cause rerendering
 
     - Refactoring the components
+
+1d: A more complex state, debugging React apps
+    
