@@ -1,13 +1,29 @@
 import { useState } from 'react'
 
-const Display = (props) => (
-  <div>
-    {props.text}
-    {' '}
-    {props.value}
-  </div>
-  
-)
+
+const Satistic = (props) => {
+  return(
+    <div>
+      {props.text}{' '}{props.value}
+    </div>
+  )
+}
+
+const Satistics = (props) => { 
+    if(props.total === 0){
+      return <p> No feedback is given.</p>
+    } else {
+      return (
+        <div>
+          <Satistic text='Good' value={props.good} />
+          <Satistic text='Neutral' value={props.neutral} />
+          <Satistic text='Bad' value={props.bad} />
+          <Satistic text='Average' value={props.average} />
+          <Satistic text='Positive' value={props.positive} />
+        </div>
+      )
+    }
+  }
 const Button = (props) => (
   <button onClick={props.onClick}>
     {props.text}  
@@ -40,7 +56,6 @@ const App = () => {
     setAll(allClicks.concat('B'))
     setBad(bad+1)
   }
-  // the average score (good: 1, neutral: 0, bad: -1
 
   return (
     <div>
@@ -52,12 +67,14 @@ const App = () => {
       
         <div>
             <h2><strong>Satistics</strong></h2>    
-            <Display value={good} text='Good'/>
-            <Display value={neutral} text='Neutral'/>
-            <Display value={bad} text='Bad'/>
-            <Display value={total} text='All'/>
-            <Display value={average} text='Average'/>
-            <Display value={positive} text='Positive'/>
+            <Satistics 
+            good={good}
+            bad={bad}
+            neutral={neutral}
+            total={total}
+            average={average}
+            positive={positive}
+            />
         </div>
  
     </div>
